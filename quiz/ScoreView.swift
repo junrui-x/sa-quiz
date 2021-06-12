@@ -17,17 +17,21 @@ struct ScoreView: View {
 // score vars
     
     var body: some View {
-        VStack {
-            Image("Image")
-                .resizable()
-                            .scaledToFit()
-                
+        ZStack {
+            LinearGradient(gradient: /*@START_MENU_TOKEN@*/Gradient(colors: [Color.red, Color.blue])/*@END_MENU_TOKEN@*/, startPoint: .topLeading, endPoint: .bottomTrailing)
+            
+            VStack {
+                Image("Image")
+                    .resizable()
+                                .scaledToFit()
+                    
 
-            Text("You got:")
-            
-            Text("\(score)/\(totalQuestions)")
-            
-          
+                Text("You got:")
+                
+                Text("\(score)/\(totalQuestions)")
+                
+              
+            }
         }
     }
     

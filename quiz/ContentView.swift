@@ -30,7 +30,12 @@ struct ContentView: View {
                               option1: "Somewhere in China",
                               option2: "Just below Malaysia",
                               option3: "Below Trump's wall",
-                              option4: "What Singapore, never heard of it")
+                              option4: "What Singapore, never heard of it"),
+                     Question(title: "2+3=?",
+                              option1: "????",
+                              option2: "5",
+                              option3: "2",
+                              option4: "10")
     ]
     // list of questions + answers
     

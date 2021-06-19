@@ -31,13 +31,13 @@ struct ContentView: View {
                              option3: "Google",
                              option4: "Tinkercademy",
                              correctOption: 1),
-    
+                    
                     Question(title: "2+4=?",
-                            option1: "6",
-                            option2: "7",
-                            option3: "0",
-                            option4: "9",
-                            correctOption: 1)]
+                             option1: "6",
+                             option2: "7",
+                             option3: "0",
+                             option4: "9",
+                             correctOption: 1)]
     
     // list of questions + answers
     
@@ -60,27 +60,37 @@ struct ContentView: View {
                     .padding()
                 HStack {
                     VStack {
-                        Button(question[questionNumber].option1){
+                        Button {
                             didTapOption(optionNumber: 1)
+                        } label: {
+                            Image(systemName: "triangle.fill")
+                            Text(question[questionNumber].option1)
                         }
                         .padding()
                         .frame(width: 160, height: 75
                                , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(Color.blue)
                         .foregroundColor(.white)
-                        Button(question[questionNumber].option3){
+                        
+                        Button {
                             didTapOption(optionNumber: 3)
+                        } label: {
+                            Image(systemName: "square.fill")
+                            Text(question[questionNumber].option3)
                         }
                         .padding()
                         .frame(width: 160, height: 75
                                , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(Color.red)
                         .foregroundColor(.white)
+                        
                     }
                     VStack {
-                        Button( question[questionNumber].option2){
+                        Button {
                             didTapOption(optionNumber: 2)
-                            // this is the correct answer
+                        } label: {
+                            Image(systemName: "rhombus.fill")
+                            Text(question[questionNumber].option2)
                         }
                         .padding()
                         .frame(width: 160, height: 75
@@ -88,8 +98,11 @@ struct ContentView: View {
                         .background(Color.green)
                         .foregroundColor(.white)
                         
-                        Button( question[questionNumber].option4){
+                        Button {
                             didTapOption(optionNumber: 4)
+                        } label: {
+                            Image(systemName: "cone.fill")
+                            Text(question[questionNumber].option4)
                         }
                         .padding()
                         .frame(width: 160, height: 75

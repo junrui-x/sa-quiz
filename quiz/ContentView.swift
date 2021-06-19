@@ -54,12 +54,14 @@ struct ContentView: View {
     var body: some View {
         
         
-           
+        
+        ZStack {
+            Color.purple.ignoresSafeArea()
             VStack {
-                ProgressView(value: Double(questionNumber),
-                            total: Double(question.count))
-                              .padding()
                 
+                ProgressView(value: Double(questionNumber),
+                             total: Double(question.count))
+                    .padding()
                 
                 Text(question[questionNumber].title)
                     .padding()
@@ -145,6 +147,7 @@ struct ContentView: View {
                     ScoreView(score: correctAnswers,
                               totalQuestions: question.count)
                    })
+        }
         
         
         

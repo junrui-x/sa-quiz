@@ -57,11 +57,16 @@ struct ContentView: View {
         
         ZStack {
             Color.purple.ignoresSafeArea()
+            
+            //background color
+            
             VStack {
                 
                 ProgressView(value: Double(questionNumber),
                              total: Double(question.count))
                     .padding()
+                
+                //progress bar
                 
                 Text(question[questionNumber].title)
                     .padding()
@@ -75,7 +80,7 @@ struct ContentView: View {
                         }
                         .padding()
                         .frame(width: 160, height: 75
-                               , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                               , alignment: .center)
                         .background(Color.blue)
                         .foregroundColor(.white)
                         
@@ -87,7 +92,7 @@ struct ContentView: View {
                         }
                         .padding()
                         .frame(width: 160, height: 75
-                               , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                               , alignment: .center)
                         .background(Color.red)
                         .foregroundColor(.white)
                         
@@ -101,7 +106,7 @@ struct ContentView: View {
                         }
                         .padding()
                         .frame(width: 160, height: 75
-                               , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                               , alignment: .center)
                         .background(Color.green)
                         .foregroundColor(.white)
                         
@@ -113,7 +118,7 @@ struct ContentView: View {
                         }
                         .padding()
                         .frame(width: 160, height: 75
-                               , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                               , alignment: .center)
                         .background(Color.yellow)
                         .foregroundColor(.white)
                         

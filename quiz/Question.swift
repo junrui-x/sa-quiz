@@ -13,6 +13,9 @@ struct Question {
     var option3 : String
     var option4 : String
 
+    var correctOption: Int
+
+
 }
 // question struct 
 

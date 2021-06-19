@@ -11,32 +11,34 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var Questions = [Question(title: "What day is it?",
-                              option1: "Monday",
-                              option2: "Saturday",
-                              option3: "Wednesday",
-                              option4: "Friday"),
-                     Question(title: "What framework are we using?",
-                              option1: "UIKit",
-                              option2: "SwiftUI",
-                              option3: "React Native",
-                              option4: "Flutter"),
-                     Question(title: "Which company created Swift?",
-                              option1: "Orange",
-                              option2: "Apple",
-                              option3: "Google",
-                              option4: "Tinkercademy"),
-                     Question(title: "Where is Singapore",
-                              option1: "Somewhere in China",
-                              option2: "Just below Malaysia",
-                              option3: "Below Trump's wall",
-                              option4: "What Singapore, never heard of it"),
-                     Question(title: "2+3=?",
-                              option1: "????",
-                              option2: "5",
-                              option3: "2",
-                              option4: "10")
-    ]
+    var question = [Question(title: "What day is it?",
+                             option1: "Monday",
+                             option2: "Friday",
+                             option3: "Wednesday",
+                             option4: "Saturday",
+                             correctOption: 4),
+                    
+                    Question(title: "What framework are we using?",
+                             option1: "UIKit",
+                             option2: "SwiftUI",
+                             option3: "React Native",
+                             option4: "Flutter",
+                             correctOption: 2),
+                    
+                    Question(title: "Which company created Swift?",
+                             option1: "Apple",
+                             option2: "Orange",
+                             option3: "Google",
+                             option4: "Tinkercademy",
+                             correctOption: 1),
+    
+                    Question(title: "2+4=?",
+                            option1: "6",
+                            option2: "7",
+                            option3: "0",
+                            option4: "9",
+                            correctOption: 1)]
+    
     // list of questions + answers
     
     
@@ -54,44 +56,44 @@ struct ContentView: View {
         ZStack {
             Color.purple.ignoresSafeArea()
             VStack {
-                Text(Questions[questionNumber].title)
+                Text(question[questionNumber].title)
                     .padding()
                 HStack {
                     VStack {
-                        Button(  Questions[questionNumber].option1){
+                        Button(question[questionNumber].option1){
                             didTapOption(optionNumber: 1)
                         }
                         .padding()
                         .frame(width: 160, height: 75
-                            , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                               , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(Color.blue)
                         .foregroundColor(.white)
-                        Button(Questions[questionNumber].option3){
+                        Button(question[questionNumber].option3){
                             didTapOption(optionNumber: 3)
                         }
                         .padding()
                         .frame(width: 160, height: 75
-                            , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                               , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(Color.red)
                         .foregroundColor(.white)
                     }
                     VStack {
-                        Button( Questions[questionNumber].option2){
+                        Button( question[questionNumber].option2){
                             didTapOption(optionNumber: 2)
                             // this is the correct answer
                         }
                         .padding()
                         .frame(width: 160, height: 75
-                            , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                               , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(Color.green)
                         .foregroundColor(.white)
                         
-                        Button( Questions[questionNumber].option4){
+                        Button( question[questionNumber].option4){
                             didTapOption(optionNumber: 4)
                         }
                         .padding()
                         .frame(width: 160, height: 75
-                            , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                               , alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .background(Color.yellow)
                         .foregroundColor(.white)
                         
@@ -109,7 +111,7 @@ struct ContentView: View {
                       dismissButton: .default(Text("OK")) {
                         questionNumber += 1
                         
-                        if questionNumber == Questions.count {
+                        if questionNumber == question.count {
                             isModalPresented = true
                             questionNumber = 0
                         }
@@ -123,8 +125,8 @@ struct ContentView: View {
                    },
                    content: {
                     ScoreView(score: correctAnswers,
-                              totalQuestions: Questions.count)
-               })
+                              totalQuestions: question.count)
+                   })
         }
         
         
@@ -137,7 +139,7 @@ struct ContentView: View {
     
     
     func didTapOption(optionNumber: Int) {
-        if optionNumber == 2 {
+        if optionNumber == question[questionNumber].correctOption {
             print("Correct!")
             isCorrect = true
             correctAnswers += 1

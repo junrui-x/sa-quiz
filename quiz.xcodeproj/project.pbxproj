@@ -57,8 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				2E13E1C5266B178E00FED49B /* quizApp.swift */,
-				2E13E1C7266B178E00FED49B /* ContentView.swift */,
 				2E13E1D8266B234A00FED49B /* ScoreView.swift */,
+				2E13E1C7266B178E00FED49B /* ContentView.swift */,
 				2E13E1D5266B1A6D00FED49B /* Question.swift */,
 				2E13E1C9266B179000FED49B /* Assets.xcassets */,
 				2E13E1CE266B179000FED49B /* Info.plist */,
